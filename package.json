@@ -16,6 +16,7 @@
     "env": "0.0.2",
     "express": "^4.17.1",
     "nedb": "^1.8.0",
+    "nedb-promises": "^4.1.1",
     "node-fetch": "^2.6.0",
     "unirest": "^0.6.0"
   }

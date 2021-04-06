@@ -30,8 +30,16 @@ app.post("/api", (request, response) => {
   const data = request.body;
   const timestamp = Date.now();
   data.timestamp = timestamp;
+  data._id = data.email_address;
 
-  database.insert(data);
-  response.json(data);
+  database.insert( data , (err, doc) => {
+    if (err) {
+      response.end();
+      return err;
+    }
+    response.json(data);
+    
+    
+  })
 });
 
