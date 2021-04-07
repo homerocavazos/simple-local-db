@@ -8,7 +8,6 @@ async function getData() {
       return '<li>' + li.email_address + '</li>'
     });
 
-
     users.innerHTML = html.join("")
   })
 };
