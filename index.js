@@ -5,12 +5,11 @@ const app = express();
 
 // If you want to use .env file
 // do: npm install dotenv
-// then uncomment line 10 and 11
+// then uncomment line 10
 
 //require("dotenv").config();
-//const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-const port = 3000;
 
 const jsonFile = 'public/database.json';
 
