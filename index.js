@@ -1,7 +1,5 @@
 const express = require("express");
-const fs = require("fs");
 const Datastore = require("nedb");
-const fetch = require("node-fetch");
 const app = express();
 require("dotenv").config();
 
@@ -34,10 +32,14 @@ app.post("/api", (request, response) => {
 
   database.insert( data , (err, doc) => {
     if (err) {
-      response.end();
-      return err;
+      response.status(400).send({
+        status: 400,
+        error: err
+        })
+    } else {
+      response.json(data);
     }
-    response.json(data);
+    
   })
 });
 

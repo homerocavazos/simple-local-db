@@ -1,10 +1,20 @@
 const form = document.getElementById('myForm')
+const users = document.getElementById('users')
 
 async function getData() {
   await axios.get('/api').then(response => {
-    console.log(response);
+    const data = response.data;
+    let html = data.map(li => {
+      return '<li>' + li.email_address + '</li>'
+    });
+
+
+    users.innerHTML = html.join("")
   })
 };
+
+getData()
+
 
 async function sendData() {
 
@@ -19,8 +29,8 @@ async function sendData() {
   return axios.post('/api',data).then(response => {
     console.log(response);
   })
-    .catch(err => {
-    console.log(err, err.response);
+  .catch(err => {
+    console.log(err);
   })
 }
 
