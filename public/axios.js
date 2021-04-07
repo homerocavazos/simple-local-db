@@ -27,6 +27,8 @@ async function sendData() {
 
   return axios.post('/api',data).then(response => {
     console.log(response);
+    getData()
+    form.reset()
   })
   .catch(err => {
     console.log(err);
