@@ -2,9 +2,15 @@ const express = require("express");
 const fs = require('fs');
 const Datastore = require("nedb");
 const app = express();
-require("dotenv").config();
 
-const port = process.env.PORT || 3000;
+// If you want to use .env file
+// do: npm install dotenv
+// then uncomment line 10 and 11
+
+//require("dotenv").config();
+//const port = process.env.PORT || 3000;
+
+const port = 3000;
 
 const jsonFile = 'public/database.json';
 

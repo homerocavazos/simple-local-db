@@ -7,12 +7,11 @@
     "start": "node index.js"
   },
   "keywords": [
-    "data"
+    "database"
   ],
   "author": "Homero Cavazos",
   "license": "GPL",
   "dependencies": {
-    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "nedb": "^1.8.0"
   }
