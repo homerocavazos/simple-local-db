@@ -1,7 +1,7 @@
 {
   "name": "data-app",
   "version": "1.0.0",
-  "description": "create a db and update it",
+  "description": "create a db and json version",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -10,14 +10,10 @@
     "data"
   ],
   "author": "Homero Cavazos",
-  "license": "MIT",
+  "license": "GPL",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "env": "0.0.2",
     "express": "^4.17.1",
-    "nedb": "^1.8.0",
-    "nedb-promises": "^4.1.1",
-    "node-fetch": "^2.6.0",
-    "unirest": "^0.6.0"
+    "nedb": "^1.8.0"
   }
 }
