@@ -38,8 +38,6 @@ app.post("/api", (request, response) => {
       return err;
     }
     response.json(data);
-    
-    
   })
 });
 
