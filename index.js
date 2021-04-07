@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const port = process.env.PORT || 3000;
 
-const jsonFile = 'database.json';
+const jsonFile = 'public/database.json';
 
 app.listen(port, () => {
   console.log(`Starting server at ${port}`);
@@ -16,18 +16,11 @@ app.use(express.json({ limit: "1mb" }));
 
 const database = new Datastore({
   filename: "database.db",
-  autoload: true,
   onload: err => {
-   database.find({}, (err, data) => {
-        let JSONdata = JSON.stringify(data, null, 2);
-          fs.writeFile(jsonFile, JSONdata, (err) => {
-            if (err) throw err;
-            console.log('Data written to file');
-          });
-      });
+    console.log(err);
   }
 });
-
+database.loadDatabase();
 
 
 app.get("/api", (request, response) => {
